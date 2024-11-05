@@ -42,5 +42,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-// COMMENTED OUT SOME LINES BECAUSE COULDNT USE JWT DECODER

@@ -14,5 +14,3 @@ describe('TokenInterceptorInterceptor', () => {
     expect(interceptor).toBeTruthy();
   });
 });
-
-// COMMENTED OUT BECAUSE COULDNT USE JWT DECODER

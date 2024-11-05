@@ -39,5 +39,3 @@ export class TokenInterceptorInterceptor implements HttpInterceptor {
     );
   }
 }
-
-// COMMENTED OUT BECAUSE COULDNT USE JWT DECODER

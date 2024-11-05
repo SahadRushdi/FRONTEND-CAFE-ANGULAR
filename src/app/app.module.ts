@@ -47,5 +47,3 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// COMMENTED OUT BECAUSE COULDNT USE JWT DECODER

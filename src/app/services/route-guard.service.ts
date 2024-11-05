@@ -49,5 +49,3 @@ export class RouteGuardService {
       }
     }
 }
-
-// COMMENTED OUT BECAUSE COULDNT USE JWT DECODER
