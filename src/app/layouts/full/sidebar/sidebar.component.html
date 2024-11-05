@@ -1,0 +1,13 @@
+<mat-nav-list appAccordation>
+    <mat-list-item appAccordationLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected"
+        [attr.group]="menuitem.state"> <!-- Use attr binding for a custom attribute -->
+
+        <a appAccoradtionToggle [routerLink]="['/cafe', menuitem.state]"
+            *ngIf="menuitem.role === '' || menuitem.role === tokenPayload.role">
+
+            <mat-icon>{{menuitem.icon}}</mat-icon>
+            <span>{{menuitem.name}}</span>
+            <span fxFlex></span>
+        </a>
+    </mat-list-item>
+</mat-nav-list>
