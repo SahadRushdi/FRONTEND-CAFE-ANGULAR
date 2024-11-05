@@ -14,9 +14,11 @@ import { FullComponent } from './layouts/full/full.component';
 import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
+// import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
+// import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 @NgModule({
   declarations: [	
     AppComponent,
@@ -40,7 +42,10 @@ import { LoginComponent } from './login/login.component';
     SharedModule,
     HttpClientModule
   ],
+  // providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorInterceptor,multi:true}],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// COMMENTED OUT BECAUSE COULDNT USE JWT DECODER
