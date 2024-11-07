@@ -16,6 +16,7 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
 import { CategoryComponent } from './dialog/category/category.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { ProductComponent } from './dialog/product/product.component';
+import { ManageOrderComponent } from './manage-order/manage-order.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,7 +36,8 @@ import { ProductComponent } from './dialog/product/product.component';
     ManageCategoryComponent,
     CategoryComponent,
     ManageProductComponent,
-    ProductComponent    
+    ProductComponent,
+    ManageOrderComponent    
   ]
 })
 export class MaterialComponentsModule {}
