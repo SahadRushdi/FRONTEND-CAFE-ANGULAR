@@ -35,9 +35,9 @@ export class ProductService {
       })
   }
 
-  delete(data:any) {
-    return this.httpClient.patch(this.url+
-      "/product/delete/",data, {
+  delete(id:any) {
+    return this.httpClient.delete(this.url+
+      "/product/delete/"+id, {
         headers: new HttpHeaders().set('Content-Type',"application/json")
       })
   }
