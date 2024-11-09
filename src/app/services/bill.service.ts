@@ -21,4 +21,16 @@ export class BillService {
   getPDF(data:any):Observable<Blob> {
     return this.httpClient.post(this.url + "/bill/getPDF", data,{responseType: 'blob'});
   }
+
+  getBills() {
+    return this.httpClient.get(this.url+"/bills/getBills/");
+  }
+
+  delete(id:any) {
+    return this.httpClient.delete(this.url+
+      "/bills/delete/"+id, {
+        headers: new HttpHeaders().set('Content-Type', "application/json")
+      })
+  }
+  
 }
