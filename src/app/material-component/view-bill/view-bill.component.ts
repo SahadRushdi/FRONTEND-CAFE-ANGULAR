@@ -6,6 +6,8 @@ import { BillService } from 'src/app/services/bill.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { GlobalConstants } from 'src/app/shared/global-constants';
 import { ViewBillProductsComponent } from '../dialog/view-bill-products/view-bill-products.component';
+import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-view-bill',
@@ -58,9 +60,47 @@ export class ViewBillComponent implements OnInit {
     })
   }
 
-  downloadReportAction(values:any) {}
+  downloadReportAction(values:any) {
+    var data = {
+      name: values.name,
+      email:values.email,
+      uuid:values.uuid,
+      contactNumber:values.contactNumber,
+      paymentMethod:values.paymentMethod,
+      totalAmount:values.totalAmount,
+      productDetails:values.productDetails
+    }
+    this.billService.getPDF(data).subscribe((response) => {
+      saveAs(response,values.uuid+'.pdf');
+    })
+  }
 
-  handleDeleteAction(values:any) {}
+  handleDeleteAction(values:any) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      message: 'delete '+values.name+' bill'
+    };
+    const dialogRef = this.dialog.open(ConfirmationComponent,dialogConfig);
+    const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe((response) => {
+      this.deleteProduct(values.id);
+      dialogRef.close();
+    })
+  }
+
+  deleteProduct(id:any) {
+    this.billService.delete(id).subscribe((response:any) => {
+      this.tableData();
+      this.responseMessage = response?.message;
+      this.snackbarService.openSnackBar(this.responseMessage,"Success");
+    },(error:any) => {
+      if (error.error?.message) {
+        this.responseMessage = error.error?.message;
+      } else {
+        this.responseMessage = GlobalConstants.genericError;
+      }
+      this.snackbarService.openSnackBar(this.responseMessage, GlobalConstants.error);
+    })
+  }
 
 
 }
