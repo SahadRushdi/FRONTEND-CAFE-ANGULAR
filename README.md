@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# About this Project
+A fuuly responsive front end for a cafe or a small scale restaurant to manage their users and orders generated b each user.
+
+# Sneak Peak To My Frontend Project
+![image](https://github.com/user-attachments/assets/de3748be-9e66-4d83-ba4c-e168b8e434c4)
+
+![image](https://github.com/user-attachments/assets/b7e1394d-18a3-4593-ae41-d5c6bc2d3f77)
+
+![image](https://github.com/user-attachments/assets/242ee6b1-2567-4fac-baf4-3a1139ab89ae)
+
+
+
+
+
